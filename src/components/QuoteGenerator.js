@@ -17,24 +17,25 @@ const QuoteGenerator = (props) => {
   };
 
   const [quote, setQuote] = React.useState();
+  const getQuote = () => axios.get("../api/quotes").then((response) => setQuote(response.data.content));
 
-  const [playing, setPlaying] = React.useState(false);
+  const [generating, setGenerating] = React.useState(false);
   const start = () => {
-    setPlaying(true);
+    setGenerating(true);
   }
 
-  React.useEffect(() => {
-    axios.get("../api/quotes").then((response) => setQuote(response.data.content));
-  }, []);
+
+
+  React.useEffect(getQuote,[]);
 
     return (
       <>
         <div className="bg-gray-400">
         <h1>{quote}</h1>
         <button
-          className="w-48 bg-indigo-500 text-white font-bold rounded-lg text-xl p-4 hover:bg-indigo-700"
+          className="w-48 bg-indigo-500 text-white font-bold rounded-lg text-xl p-4 hover:bg-indigo-700" onClick={getQuote}
         >
-          ¡Useless button!
+          ¡Otra cita por favor!
         </button>
         </div>
       </>
