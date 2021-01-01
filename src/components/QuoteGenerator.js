@@ -31,9 +31,9 @@ const QuoteGenerator = (props) => {
     return (
       <>
         <div className="bg-gray-400">
-        <h1>{quote}</h1>
+        <h1 className="italic text-center p-4">{quote}</h1>
         <button
-          className="w-48 bg-indigo-500 text-white font-bold rounded-lg text-xl p-4 hover:bg-indigo-700" onClick={getQuote}
+          className="flex flex-center flex-justify-center w-48 bg-indigo-500 text-white text-center font-bold rounded-lg text-lg p-4 hover:bg-indigo-700" onClick={getQuote}
         >
           ¡Otra cita por favor!
         </button>
