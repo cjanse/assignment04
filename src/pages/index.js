@@ -10,9 +10,9 @@ export default function Home() {
 
   //const [quote, setQuote] = React.useState();
 
-  const [playing, setPlaying] = React.useState(false);
+  const [generating, setGenerating] = React.useState(false);
   const start = () => {
-    setPlaying(true);
+    setGenerating(true);
   }
 
   /*React.useEffect(() => {
@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      {playing ? (<QuoteGenerator/>)
+      {generating ? (<QuoteGenerator/>)
       : (
         <MainMenu onStart={start}/>
         
